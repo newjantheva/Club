@@ -52,7 +52,8 @@
                      AbsoluteLayout.LayoutBounds="20, 200, 48, 48"
                      Style="{StaticResource ButtonStyle}"/>
 
-        <Entry AbsoluteLayout.LayoutBounds="60,200,200,48"/>
+        <Entry AbsoluteLayout.LayoutBounds="60,200,200,48"
+               Placeholder="Search"/>
         
         <ImageButton Source="settings_icon"
                      Padding="14"
