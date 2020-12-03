@@ -7,29 +7,59 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Color x:Key="ButtonBackgroundColor">#F5F9FA</Color>
+            <Color x:Key="TextColor">#313643</Color>
             <Style x:Key="HeaderFontLight" TargetType="Label">
                 <Setter Property="FontFamily" Value="{StaticResource MontserratLight}"/>
-                <Setter Property="FontSize" Value="30"/> 
+                <Setter Property="FontSize" Value="28"/>
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+            </Style>
+            <Style x:Key="HeaderFontMedium" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource MontserratMedium}"/>
+                <Setter Property="FontSize" Value="28"/>
+                <Setter Property="TextColor" Value="{StaticResource TextColor}"/>
+            </Style>
+            <Style x:Key="ButtonStyle" TargetType="ImageButton">
+                <Setter Property="BackgroundColor" Value="{StaticResource ButtonBackgroundColor}"/>
+                <Setter Property="CornerRadius" Value="14"/>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
 
     <AbsoluteLayout>
         <ImageButton Padding="10"
-                     BackgroundColor="White"
+                     Style="{StaticResource ButtonStyle}"
                      AbsoluteLayout.LayoutBounds="20,20,48,48"
                      Source="hamburger_icon"/>
 
         <ImageButton Padding="10"
-                     BackgroundColor="{StaticResource ButtonBackgroundColor}"
+                     Style="{StaticResource ButtonStyle}"
                      AbsoluteLayout.LayoutBounds="300,20,48,48"
                      Source="basket_icon"/>
 
         <StackLayout
             AbsoluteLayout.LayoutBounds="20, 100, 340, 100">
             <Label Style="{StaticResource HeaderFontLight}" Text="Choose your new"/>
-            <Label Text="green friend"/>
+            <Label Style="{StaticResource HeaderFontMedium}" Text="green friend"/>
         </StackLayout>
-    </AbsoluteLayout>
+        
+        <BoxView
+            AbsoluteLayout.LayoutBounds="20, 200, 260, 48"
+            BackgroundColor="{StaticResource ButtonBackgroundColor}"
+            CornerRadius="10"/>
 
+        <ImageButton Source="search_icon"
+                     Padding="14"
+                     AbsoluteLayout.LayoutBounds="20, 200, 48, 48"
+                     Style="{StaticResource ButtonStyle}"/>
+
+        <Entry AbsoluteLayout.LayoutBounds="60,200,200,48"/>
+        
+        <ImageButton Source="settings_icon"
+                     Padding="14"
+                     AbsoluteLayout.LayoutBounds="300, 200, 48, 48"
+                     Style="{StaticResource ButtonStyle}"/>
+
+
+
+    </AbsoluteLayout>
 </ContentPage>
