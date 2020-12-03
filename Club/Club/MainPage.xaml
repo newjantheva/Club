@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Club.MainPage"
+             BackgroundColor="White">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="ButtonBackgroundColor">#F5F9FA</Color>
+            <Style x:Key="HeaderFontLight" TargetType="Label">
+                <Setter Property="FontFamily" Value="{StaticResource MontserratLight}"/>
+                <Setter Property="FontSize" Value="30"/> 
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <AbsoluteLayout>
+        <ImageButton Padding="10"
+                     BackgroundColor="White"
+                     AbsoluteLayout.LayoutBounds="20,20,48,48"
+                     Source="hamburger_icon"/>
+
+        <ImageButton Padding="10"
+                     BackgroundColor="{StaticResource ButtonBackgroundColor}"
+                     AbsoluteLayout.LayoutBounds="300,20,48,48"
+                     Source="basket_icon"/>
+
+        <StackLayout
+            AbsoluteLayout.LayoutBounds="20, 100, 340, 100">
+            <Label Style="{StaticResource HeaderFontLight}" Text="Choose your new"/>
+            <Label Text="green friend"/>
+        </StackLayout>
+    </AbsoluteLayout>
+
+</ContentPage>
