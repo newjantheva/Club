@@ -3,9 +3,10 @@
     x:Class="Club.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:converters="clr-namespace:Club.Converters"
     xmlns:controls="clr-namespace:Club.Controls"
-    xmlns:viewmodels="clr-namespace:Club.ViewModels" xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:converters="clr-namespace:Club.Converters"
+    xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+    xmlns:viewmodels="clr-namespace:Club.ViewModels"
     BackgroundColor="White">
 
 
@@ -95,7 +96,8 @@
         <Entry
             x:Name="SearchEntry"
             AbsoluteLayout.LayoutBounds="60, 200, 240, 48"
-            Placeholder="Search" />
+            Placeholder="Search" 
+            TextChanged="SearchEntryTextChanged"/>
 
         <ImageButton
             x:Name="SettingsIcon"
@@ -107,6 +109,7 @@
         <ScrollView x:Name="ScrollContainer" AbsoluteLayout.LayoutBounds="20,300, 380, 300">
 
             <FlexLayout
+                x:Name="ProductList"
                 BindableLayout.ItemsSource="{Binding Products}"
                 Direction="Column"
                 HeightRequest="1300"

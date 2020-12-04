@@ -18,7 +18,6 @@ namespace Club
             SearchHidden
         }
 
-
         public MainPage()
         {
             InitializeComponent();
@@ -270,6 +269,16 @@ namespace Club
         private void BasketIcon_Clicked(object sender, EventArgs e)
         {
             CartPopover.IsVisible = true;
+        }
+
+        private void SearchEntryTextChanged(object sender, TextChangedEventArgs e)
+        {
+            var _container = BindingContext as MainViewModel;
+
+            if (string.IsNullOrWhiteSpace(e.NewTextValue.ToLower()))
+                BindableLayout.SetItemsSource(ProductList, _container.Products);
+            else
+                BindableLayout.SetItemsSource(ProductList, _container.Products.Where(p => p.Name.ToLower().Contains(e.NewTextValue)));
         }
     }
 }
